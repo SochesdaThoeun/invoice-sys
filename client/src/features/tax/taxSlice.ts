@@ -30,7 +30,7 @@ export const fetchTaxCodes = createAsyncThunk<
   try {
     const { page = 1, limit = 10 } = params || {};
     const response = await taxService.getTaxCodes(page, limit);
-    console.log('tax response', response);
+    //console.log('tax response', response);
     return {
       taxCodes: response.items,
       pagination: {

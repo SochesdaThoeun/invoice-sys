@@ -30,7 +30,7 @@ export const fetchBusinessAddresses = createAsyncThunk<
   try {
     const { page = 1, limit = 10 } = params || {};
     const response = await businessAddressService.getBusinessAddresses(page, limit);
-    console.log('response', response);
+    //console.log('response', response);
     return {
       businessAddresses: response.items,
       pagination: {

@@ -12,8 +12,8 @@ export const invoiceService = {
   async getInvoices(page = 1, limit = 10): Promise<InvoicesResponse> {
     const response = await apiCall<Invoice[]>('get', `/invoices?page=${page}&limit=${limit}`);
     
-    console.log('Invoice API Response:', response);
-    console.log('Response type:', typeof response, 'Is array:', Array.isArray(response));
+    //console.log('Invoice API Response:', response);
+    //console.log('Response type:', typeof response, 'Is array:', Array.isArray(response));
     
     // Handle response - API returns array directly
     if (Array.isArray(response)) {
@@ -26,7 +26,7 @@ export const invoiceService = {
           limit: limit
         }
       };
-      console.log('Returning invoice data:', result);
+      //console.log('Returning invoice data:', result);
       return result;
     }
     

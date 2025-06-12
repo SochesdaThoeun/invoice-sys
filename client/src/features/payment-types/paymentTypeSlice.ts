@@ -30,7 +30,7 @@ export const fetchPaymentTypes = createAsyncThunk<
   try {
     const { page = 1, limit = 10 } = params || {};
     const response = await paymentTypeService.getPaymentTypes(page, limit);
-    console.log('response', response);
+    //console.log('response', response);
     // API returns direct array, not paginated response
     return response;
   } catch (error: any) {

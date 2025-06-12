@@ -24,10 +24,10 @@ export const login = createAsyncThunk<
   { rejectValue: string }
 >('auth/login', async (credentials, { rejectWithValue }) => {
   try {
-    console.log('login credentials', credentials);
+    //console.log('login credentials', credentials);
     const response = await authService.login(credentials);
-    console.log('login response', response);
-    console.log('login response structure:', JSON.stringify(response, null, 2));
+    //console.log('login response', response);
+    //console.log('login response structure:', JSON.stringify(response, null, 2));
     
     // Check if the response has token and user
     if (!response.token || !response.user) {
@@ -43,7 +43,7 @@ export const login = createAsyncThunk<
       token: response.token
     };
     
-    console.log('Returning success result:', result);
+    //console.log('Returning success result:', result);
     return result;
   } catch (e: any) {
     console.error('Login error:', e);
@@ -58,9 +58,9 @@ export const register = createAsyncThunk<
   { rejectValue: string }
 >('auth/register', async (userData, { rejectWithValue }) => {
   try {
-    console.log('register userData', userData);
+    //console.log('register userData', userData);
     const response = await authService.register(userData);
-    console.log('register response', response);
+    //console.log('register response', response);
     
     // Check if the response has token and user
     if (!response.token || !response.user) {
@@ -131,7 +131,7 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(login.fulfilled, (state, action) => {
-        console.log('login.fulfilled action:', action);
+        //console.log('login.fulfilled action:', action);
         if (!action.payload) {
           console.error('Login fulfilled but no payload received');
           state.error = 'Invalid response from server';
@@ -147,16 +147,12 @@ const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.error = null;
-        console.log('Updated state:', { 
-          isAuthenticated: state.isAuthenticated,
-          hasUser: !!state.user,
-          hasToken: !!state.token
-        });
+        
       })
       .addCase(login.rejected, (state, action) => {
-        console.log('login.rejected action:', action);
-        console.log('login.rejected payload:', action.payload);
-        console.log('login.rejected error:', action.error);
+        //console.log('login.rejected action:', action);
+        //console.log('login.rejected payload:', action.payload);
+        //console.log('login.rejected error:', action.error);
         state.isLoading = false;
         state.isAuthenticated = false;
         state.user = null;
@@ -170,7 +166,7 @@ const authSlice = createSlice({
         state.error = null;
       })
       .addCase(register.fulfilled, (state, action) => {
-        console.log('register.fulfilled action:', action);
+        //console.log('register.fulfilled action:', action);
         
         // Save token to localStorage
         localStorage.setItem('token', action.payload.token);
@@ -180,10 +176,10 @@ const authSlice = createSlice({
         state.user = action.payload.user;
         state.token = action.payload.token;
         state.error = null;
-        console.log('Updated state after register:', state);
+        //console.log('Updated state after register:', state);
       })
       .addCase(register.rejected, (state, action) => {
-        console.log('register.rejected action:', action);
+        //console.log('register.rejected action:', action);
         state.isLoading = false;
         state.error = action.payload || 'Registration failed';
       })

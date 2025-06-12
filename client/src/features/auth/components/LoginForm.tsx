@@ -16,9 +16,9 @@ export function LoginForm() {
   const { isLoading, error, isAuthenticated } = useSelector((state: RootState) => state.auth);
   
   useEffect(() => {
-    console.log('useEffect triggered, isAuthenticated:', isAuthenticated);
+    //console.log('useEffect triggered, isAuthenticated:', isAuthenticated);
     if (isAuthenticated) {
-      console.log('Navigating to dashboard...');
+      //console.log('Navigating to dashboard...');
       navigate('/dashboard');
     }
   }, [isAuthenticated, navigate]);
@@ -26,14 +26,14 @@ export function LoginForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email && password) {
-      console.log('dispatching login');
+      //console.log('dispatching login');
       try {
-        const result = await dispatch(login({ email, password }));
-        console.log('login action type:', result.type);
-        console.log('login fulfilled?', result.type.endsWith('/fulfilled'));
-        console.log('login rejected?', result.type.endsWith('/rejected'));
-        console.log('login result:', result);
-        console.log('authentication status after login:', isAuthenticated);
+        await dispatch(login({ email, password }));
+        //console.log('login action type:', result.type);
+        //console.log('login fulfilled?', result.type.endsWith('/fulfilled'));
+        //console.log('login rejected?', result.type.endsWith('/rejected'));
+        //console.log('login result:', result);
+        //console.log('authentication status after login:', isAuthenticated);
       } catch (error) {
         console.error('Error during login dispatch:', error);
       }

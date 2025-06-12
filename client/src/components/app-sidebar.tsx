@@ -93,7 +93,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { theme, setTheme } = useTheme();
 
   const { userProfile } = useSelector((state: RootState) => state.settings);
-  console.log(userProfile)
+  //console.log(userProfile)
 
   // Fetch user profile on component mount
   useEffect(() => {

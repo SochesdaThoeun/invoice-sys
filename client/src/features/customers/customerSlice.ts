@@ -30,7 +30,7 @@ export const fetchCustomers = createAsyncThunk<
   try {
     const { page = 1, limit = 10 } = params || {};
     const response = await customerService.getCustomers(page, limit);
-    console.log('response', response);
+    //console.log('response', response);
     return {
       customers: response.items,
       pagination: {

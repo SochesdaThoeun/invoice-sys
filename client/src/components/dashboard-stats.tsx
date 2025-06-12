@@ -32,7 +32,7 @@ export function DashboardStats() {
   // Debug logging to see what we're getting from the API
   useEffect(() => {
     if (financialSummary) {
-      console.log('Financial Summary Data:', financialSummary);
+      //console.log('Financial Summary Data:', financialSummary);
     }
   }, [financialSummary]);
 

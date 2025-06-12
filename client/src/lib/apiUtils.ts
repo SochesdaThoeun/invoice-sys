@@ -50,9 +50,9 @@ export const apiCall = async <T>(
   config?: AxiosRequestConfig
 ): Promise<T> => {
   try {
-    console.log(`API Request: ${method.toUpperCase()} ${url}`, data);
+    //console.log(`API Request: ${method.toUpperCase()} ${url}`, data);
     const response = await api[method](url, method === 'get' ? config : data, method !== 'get' ? config : undefined);
-    console.log(`API Success: ${method.toUpperCase()} ${url}`, response.data);
+    //console.log(`API Success: ${method.toUpperCase()} ${url}`, response.data);
     return response.data;
   } catch (error: any) {
     console.error(`API Error: ${method.toUpperCase()} ${url}`, error);

@@ -288,11 +288,11 @@ export function NewInvoicePage() {
       }))
     };
 
-    console.log('Submitting invoice data:', invoiceData);
+    //console.log('Submitting invoice data:', invoiceData);
     setIsSubmitting(true);
     try {
       const result = await dispatch(createInvoice(invoiceData)).unwrap();
-      console.log('Invoice created successfully:', result);
+      //console.log('Invoice created successfully:', result);
       toast.success('Invoice created successfully!');
       navigate(`/invoices/${result.id}`);
     } catch (error: any) {

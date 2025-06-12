@@ -12,16 +12,16 @@ import type {
 export const authService = {
   // Login user
   async login(userData: LoginRequest): Promise<LoginResponse> {
-    console.log('login userData', userData);
+    //console.log('login userData', userData);
     try {
       const response = await apiCall<LoginResponse>('post', '/auth/login', userData);
-      console.log('API raw response:', response);
+      //console.log('API raw response:', response);
       
       if (response.token && response.user) {
-        console.log('Login successful, saving token');
+        //console.log('Login successful, saving token');
         localStorage.setItem('token', response.token);
       } else {
-        console.log('Login response missing token or user:', response);
+        //console.log('Login response missing token or user:', response);
       }
       return response;
     } catch (error) {

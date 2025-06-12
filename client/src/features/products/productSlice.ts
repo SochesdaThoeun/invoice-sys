@@ -30,7 +30,7 @@ export const fetchProducts = createAsyncThunk<
   try {
     const { page = 1, limit = 10 } = params || {};
     const response = await productService.getProducts(page, limit);
-    console.log('products response', response);
+    //console.log('products response', response);
     return {
       products: response.items,
       pagination: {
