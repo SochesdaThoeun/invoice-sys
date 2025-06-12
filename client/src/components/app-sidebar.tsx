@@ -3,11 +3,9 @@ import { useDispatch, useSelector } from "react-redux"
 import type { AppDispatch, RootState } from "@/store"
 import {
   IconCalculator,
-  IconCashBanknote,
   IconDashboard,
   IconFileInvoice,
   IconInnerShadowTop,
-  IconReportMoney,
   IconSettings,
   IconShoppingCart,
   IconUsers,

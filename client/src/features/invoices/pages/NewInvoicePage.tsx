@@ -45,7 +45,6 @@ export function NewInvoicePage() {
   const { taxCodes } = useSelector((state: RootState) => state.tax);
   const { paymentTypes } = useSelector((state: RootState) => state.paymentTypes);
   const { businessAddresses } = useSelector((state: RootState) => state.businessAddresses);
-  const { isLoading: isCreating } = useSelector((state: RootState) => state.invoices);
   const { user } = useSelector((state: RootState) => state.auth);
   const { userProfile } = useSelector((state: RootState) => state.settings);
   

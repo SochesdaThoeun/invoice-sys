@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
@@ -58,19 +58,11 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Label } from '@/components/ui/label';
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from '@/components/ui/pagination';
 
 export function PaymentTypesList() {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
-  const { paymentTypes, isLoading, pagination } = useSelector(
+  const { paymentTypes, isLoading } = useSelector(
     (state: RootState) => state.paymentTypes
   );
   

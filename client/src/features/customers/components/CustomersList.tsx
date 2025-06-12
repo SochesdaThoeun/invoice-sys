@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
@@ -68,7 +68,7 @@ import {
 export function CustomersList() {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
-  const { customers, isLoading, pagination } = useSelector(
+  const { customers, isLoading } = useSelector(
     (state: RootState) => state.customers
   );
   

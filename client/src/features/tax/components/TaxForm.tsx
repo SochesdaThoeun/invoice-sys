@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { createTaxCode, updateTaxCode, fetchTaxCodeById, clearCurrentTaxCode } from '../taxSlice';
-import { type TaxCode, type CreateTaxCodeRequest } from '../models/taxModels';
+import {  type CreateTaxCodeRequest } from '../models/taxModels';
 import { type RootState, type AppDispatch } from '../../../store';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -49,7 +49,7 @@ export function TaxForm({ mode }: TaxFormProps) {
       setFormData({
         countryCode: currentTaxCode.countryCode,
         region: currentTaxCode.region || '',
-        rate: currentTaxCode.rate
+        rate: Number(currentTaxCode.rate)
       });
     }
   }, [currentTaxCode, mode]);

@@ -1,7 +1,6 @@
 import { apiCall } from '../../../lib/apiUtils';
 import type {
   PaymentType,
-  PaymentTypesResponse,
   CreatePaymentTypeRequest,
   UpdatePaymentTypeRequest
 } from '../models/paymentTypeModels';

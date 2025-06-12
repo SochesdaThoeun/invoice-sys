@@ -31,7 +31,7 @@ export function OrdersList() {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   
-  const { orders, isLoading, error, pagination } = useSelector((state: RootState) => state.orders);
+  const { orders, isLoading, pagination } = useSelector((state: RootState) => state.orders);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
@@ -109,7 +109,7 @@ export function OrdersList() {
           <span className="text-muted-foreground">No customer</span>
         );
       },
-      filterFn: (row, id, value) => {
+      filterFn: (row, value) => {
         const order = row.original;
         const customerName = order.customer?.name?.toLowerCase() || '';
         return customerName.includes(value.toLowerCase());

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { IconArrowLeft, IconPlus, IconMinus, IconTrash } from '@tabler/icons-react';
+import { IconArrowLeft, IconPlus, IconTrash } from '@tabler/icons-react';
 
 import { createOrder } from '../orderSlice';
 import { fetchCustomers } from '../../customers/customerSlice';
@@ -33,7 +33,6 @@ export function NewOrderPage() {
   
   const { customers } = useSelector((state: RootState) => state.customers);
   const { products } = useSelector((state: RootState) => state.products);
-  const { isLoading: isCreating } = useSelector((state: RootState) => state.orders);
   
   const [customerId, setCustomerId] = useState('');
   const [createQuote, setCreateQuote] = useState(false);

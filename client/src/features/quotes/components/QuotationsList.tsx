@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { format } from 'date-fns';
@@ -6,7 +6,6 @@ import {
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
-  getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
@@ -126,7 +125,7 @@ export function QuotationsList() {
         const customer = row.original.customer;
         return customer ? customer.name : 'N/A';
       },
-      filterFn: (row, id, value) => {
+      filterFn: (row, value) => {
         const customer = row.original.customer;
         const customerName = customer?.name?.toLowerCase() || '';
         return customerName.includes(value.toLowerCase());
