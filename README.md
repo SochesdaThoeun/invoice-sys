@@ -1,6 +1,6 @@
 
 
-FULL URL: www.invoiceee.xyz
+FULL URL: www.invoiceee.xyz / http://31.97.105.231/ (Uploading in progress)
 
 # Invoice Management System
 
