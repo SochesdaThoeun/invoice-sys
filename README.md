@@ -1,8 +1,8 @@
-
-
-FULL URL: www.invoiceee.xyz / http://31.97.105.231/ (Uploading in progress)
-
 # Invoice Management System
+
+FULL URL:  http://31.97.105.231/
+
+
 
 A complete full-stack multi-tenant invoicing platform built with modern web technologies. Features a React frontend with TypeScript and a Node.js backend with PostgreSQL, designed for businesses to manage quotes, orders, invoices, and analytics.
 
