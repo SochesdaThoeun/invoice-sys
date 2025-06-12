@@ -1,6 +1,6 @@
 
 
-FULL URL: www.invoicee.xyz
+FULL URL: www.invoiceee.xyz
 
 # Invoice Management System
 
