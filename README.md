@@ -81,9 +81,14 @@ PORT=3000
 NODE_ENV=development
 ```
 
-Optionally, create a `.env` file in the client directory:
+Create a `.env` file in the client directory:
 ```env
-VITE_API_URL=http://localhost:3000
+VITE_API_URL=http://localhost:3000/api
+```
+
+Alternatively, you can modify the BASE_URL directly in `client/src/lib/apiUtils.ts`:
+```typescript
+const BASE_URL = 'http://localhost:3000/api'; // Change to your backend URL
 ```
 
 ### 5. Start Development Servers

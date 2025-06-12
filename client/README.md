@@ -27,10 +27,16 @@ npm install
 ```
 
 ### 2. Configure API Connection
-The frontend connects to the backend API through configuration in `src/services/api.ts`. By default, it connects to `http://localhost:3000`. To change the backend URL, update the base URL in your API configuration or create a `.env` file:
+The frontend connects to the backend API through configuration in `src/lib/apiUtils.ts`. By default, it connects to `http://localhost:3000/api`. To change the backend URL, update the `.env` file:
 
 ```env
-VITE_API_URL=http://localhost:3000
+VITE_API_URL=http://localhost:3000/api
+```
+
+Or modify the BASE_URL directly in `src/lib/apiUtils.ts`:
+
+```typescript
+const BASE_URL = 'http://your-backend-url.com/api';
 ```
 
 ### 3. Start Development Server
